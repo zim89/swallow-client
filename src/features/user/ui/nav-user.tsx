@@ -8,6 +8,7 @@ import {
   LogOut,
   Sparkles,
 } from 'lucide-react'
+import { useLogout } from '@/features/auth'
 import {
   Avatar,
   AvatarFallback,
@@ -39,6 +40,7 @@ type Props = {
 
 export const NavUser = ({ user }: Props) => {
   const { isMobile } = useSidebar()
+  const { mutate: logout } = useLogout()
 
   return (
     <SidebarMenu>
@@ -101,7 +103,7 @@ export const NavUser = ({ user }: Props) => {
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>
+            <DropdownMenuItem onClick={() => logout()}>
               <LogOut />
               Log out
             </DropdownMenuItem>
