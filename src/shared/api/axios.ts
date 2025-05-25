@@ -30,8 +30,7 @@ const errorCatch = (error: AxiosError<ApiErrorResponse>): string => {
 }
 
 const options: CreateAxiosDefaults = {
-  // todo: fix baseURL
-  baseURL: 'https://back-dev2.fdout.com',
+  baseURL: process.env.NEXT_PUBLIC_API_URL,
   headers: getContentType(),
   withCredentials: false,
 }
