@@ -7,6 +7,7 @@
   --font-sans: var(--font-poppins-sans);
 
   --color-background: var(--background);
+  --color-background-accent: var(--background-accent);
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
@@ -48,6 +49,7 @@
 
 :root {
   --background: #ffffff; /* color/white */
+  --background-accent: #edeade; /* color/beige */
   --foreground: #141108; /* color/black */
 
   --primary: #141108; /* color/black */
@@ -141,6 +143,6 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply rounded-3xl bg-background;
+    @apply bg-background text-foreground;
   }
 }

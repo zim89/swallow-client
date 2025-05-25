@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react'
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
+import { AppProviders } from './providers'
 import './globals.css'
 
 const poppinsSans = Poppins({
@@ -26,7 +27,7 @@ const RootLayout = ({
         className={`${poppinsSans.variable} antialiased`}
         suppressHydrationWarning
       >
-        {children}
+        <AppProviders>{children}</AppProviders>
       </body>
     </html>
   )

@@ -1,12 +1,14 @@
 const publicRoute = (path: string) => ({ path, protected: false })
-// const protectedRoute = (path: string) => ({ path, protected: true })
+const protectedRoute = (path: string) => ({ path, protected: true })
 
 export const appRoutes = {
-  base: {
-    home: publicRoute('/'),
+  home: publicRoute('/'),
+  categories: protectedRoute('/categories'),
+  chats: {
+    index: protectedRoute('/chats'),
   },
   auth: {
-    login: publicRoute('/login'),
-    register: publicRoute('/register'),
+    login: publicRoute('/auth/login'),
+    register: publicRoute('/auth/register'),
   },
-}
+} as const
